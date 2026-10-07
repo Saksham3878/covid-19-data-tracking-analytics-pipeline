@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.env
+.env.local
+
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+logs/
+*.log
+
+.DS_Store
+.idea/
+.vscode/
+
+# Power BI local caches
+*.pbix
+*.pbit
+dbt_profiles/profiles.yml

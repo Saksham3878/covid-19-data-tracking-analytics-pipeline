@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: stg_covid
+    description: "Cleaned COVID-19 staging data"
+
+    columns:
+      - name: country
+        tests:
+          - not_null
+
+      - name: date
+        tests:
+          - not_null
+
+  - name: dim_country
+    description: "Country dimension table"
+
+    columns:
+      - name: country_id
+        tests:
+          - not_null
+          - unique
+
+      - name: country_name
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    description: "Date dimension table"
+
+    columns:
+      - name: date_id
+        tests:
+          - not_null
+          - unique
+
+      - name: full_date
+        tests:
+          - not_null
+          - unique
+
+  - name: fact_covid
+    description: "COVID-19 fact table containing daily country-level statistics"
+
+    columns:
+      - name: country_id
+        tests:
+          - not_null
+
+      - name: date_id
+        tests:
+          - not_null
