@@ -2,7 +2,7 @@
 
 An end-to-end data engineering project that processes public COVID-19 data, transforms it into analytics-ready datasets, and presents public-health trends through an interactive dashboard.
 
-**Live Dashboard:** [Open Dashboard](https://covid-19-data-tracking-analytics-pipeline-hcty5u39qbeyrgwymu9.streamlit.app)
+**Live Dashboard:** [Open Dashboard](https://covid-19-data-tracking-analytics-pipeline-hcty5u39qbeyrgrwymu9.streamlit.app/)
 
 **GitHub Repository:** [View Source Code](https://github.com/Saksham3878/covid-19-data-tracking-analytics-pipeline)
 
