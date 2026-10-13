@@ -32,14 +32,22 @@ load_dotenv(BASE_DIR / ".env")
 # DATABASE CONNECTION
 # =========================================================
 
-def get_connection():
 
+def get_setting(key):
+    try:
+        return st.secrets[key]
+    except (KeyError, FileNotFoundError):
+        return os.getenv(key)
+
+
+def get_connection():
     return psycopg2.connect(
-        host=os.getenv("POSTGRES_HOST"),
-        port=os.getenv("POSTGRES_PORT"),
-        database=os.getenv("POSTGRES_DB"),
-        user=os.getenv("POSTGRES_USER"),
-        password=os.getenv("POSTGRES_PASSWORD")
+        host=get_setting("POSTGRES_HOST"),
+        port=get_setting("POSTGRES_PORT"),
+        database=get_setting("POSTGRES_DB"),
+        user=get_setting("POSTGRES_USER"),
+        password=get_setting("POSTGRES_PASSWORD"),
+        sslmode=get_setting("POSTGRES_SSLMODE") or "prefer"
     )
 
 
